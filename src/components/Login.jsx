@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import Logo from "./Logo";
 
 const Login = (props) => {
   return (
     <Container>
       <Nav>
-        <a href="/">
-          <img src="/images/login-logo.svg" alt="Linkedin Logo SVG" />
-        </a>
+        <Logo />
         <div>
           <Join>Join Now</Join>
           <SignIn>Sign In</SignIn>
@@ -21,6 +20,12 @@ const Login = (props) => {
             alt="people sharing a desk working"
           />
         </Hero>
+        <Form>
+          <Google>
+            <img src="/images/google.svg" alt="Login using Google" />
+            <p> Sign in with Google </p>
+          </Google>
+        </Form>
       </Section>
     </Container>
   );
@@ -91,12 +96,14 @@ const Section = styled.section`
   position: relative;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 1128px;
+  max-width: 90vw;
   align-items: center;
+
   margin: auto;
   @media (max-width: 768px) {
     margin: auto;
     min-height: 0px;
+    padding-top: 5px;
   }
 `;
 
@@ -120,17 +127,48 @@ const Hero = styled.div`
 
   img {
     /* z-index: -1; */
-    width: 700px;
-    height: 670px;
+    margin: auto;
+    width: 50%;
+    height: auto;
     position: absolute;
-    bottom: -2px;
-    right: -150px;
+    top: 10vh;
+    right: 0.5vw;
     @media (max-width: 768px) {
       top: 230px;
       width: initial;
       position: initial;
       height: initial;
     }
+  }
+`;
+
+const Form = styled.div`
+  margin-top: 100px;
+  width: 408px;
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
+`;
+
+const Google = styled.button`
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  align-items: center;
+  height: 56px;
+  width: 100%;
+  border-radius: 28px;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 60%), inset 0 0 0 1px rgb(0 0 0 / 0%),
+    inset 0 0 0 2px rgb(0 0 0 / 0%);
+  vertical-align: middle;
+  z-index: 0;
+  transition-duration: 167ms;
+  font-size: 20px;
+  margin: auto;
+  color: rgba(0, 0, 0, 0.6);
+  &:hover {
+    background-color: rgba(207, 207, 207, 0.2);
+    color: rgba(0, 0, 0, 0.75);
   }
 `;
 
