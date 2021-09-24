@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import Logo from "./Logo";
+
 
 const Login = (props) => {
   return (
     <Container>
       <Nav>
-        <Logo />
+        <a href="/">
+          <img src="/images/login-logo.svg" alt="" />
+        </a>
         <div>
           <Join>Join Now</Join>
           <SignIn>Sign In</SignIn>
